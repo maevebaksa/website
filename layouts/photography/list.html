@@ -16,10 +16,6 @@
     </figure>
     {{ end }}
   </section>
-  <footer class="mb-photo-footer">
-    <span>Scroll / swipe to browse</span>
-    <span>© {{ now.Year }} Maeve Baksa</span>
-  </footer>
   {{ else }}
   <section class="mb-photo-empty">
     <div>
@@ -27,9 +23,10 @@
       <div class="mb-photo-copy">{{ .Content }}</div>
     </div>
   </section>
+  {{ end }}
+
   <footer class="mb-photo-footer">
     <span>© {{ now.Year }} Maeve Baksa</span>
   </footer>
-  {{ end }}
 </main>
 {{ end }}

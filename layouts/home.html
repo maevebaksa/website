@@ -5,7 +5,9 @@
   {{ partial "copyright.html" . }}
 </aside>
 
-{{ partial "field-frame.html" (dict "class" "home-field" "frame" "home") }}
+<div class="field-frame home-field" data-contour-frame="home">
+  {{ partial "marks.html" . }}
+</div>
 {{ partial "site-controls.html" . }}
 
 <div class="mb-home-discipline">MECHANICS / MATERIALS / CONTROL</div>
@@ -17,12 +19,13 @@
     </main>
 
     <figure class="mb-home-portrait">
-      <img src="{{ "images/maeve-profile.jpg" | relURL }}"
+      <img src="{{ "images/maeve-profile.webp" | relURL }}"
            alt="Portrait of Maeve Baksa"
            width="1254"
            height="1254"
            loading="eager"
-           decoding="async">
+           decoding="async"
+           fetchpriority="high">
       <figcaption>Maeve Baksa · Mechanical Engineer</figcaption>
     </figure>
   </div>
