@@ -4,7 +4,7 @@ weight: 3
 description: "A Voron Switchwire / Enderwire conversion used for CoreXZ motion, Klipper, interface, and camera-development work."
 type: "COREXZ / ENDERWIRE"
 year: "2026"
-image: "images/voron-switchwire.jpg"
+image: "images/voron-switchwire.png"
 alt: "Green-and-black enclosed Voron Switchwire Enderwire conversion"
 domain: "Mechanical systems / additive manufacturing"
 status: "Development platform"
