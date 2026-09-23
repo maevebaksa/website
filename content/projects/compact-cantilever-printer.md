@@ -5,7 +5,7 @@ weight: 5
 description: "A compact Rat Rig V-Minion used as a cantilevered Cartesian development platform."
 type: "CARTESIAN / CANTILEVER"
 year: "2026"
-image: "images/ratrig-v-minion.jpg"
+image: "images/ratrig-v-minion.png"
 alt: "Green-and-black Rat Rig V-Minion 3D printer"
 domain: "Mechanical systems / additive manufacturing"
 status: "Development platform"
