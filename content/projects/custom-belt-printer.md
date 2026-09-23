@@ -5,7 +5,7 @@ weight: 6
 description: "A compact BabyBelt Pro continuous-belt printer used for small-format belt-printing experiments."
 type: "BELT / CONTINUOUS"
 year: "2026"
-image: "images/babybelt-pro.jpg"
+image: "images/babybelt-pro.png"
 alt: "Yellow-and-black Printcepts BabyBelt Pro belt 3D printer"
 domain: "Mechanical systems / additive manufacturing"
 status: "Development platform"
