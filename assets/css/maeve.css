@@ -586,3 +586,9 @@ a { -webkit-tap-highlight-color: transparent; }
     font-size: clamp(16px, 4.1vh, 22px);
   }
 }
+
+
+/* The discipline label is optional decoration; hide it before it crowds navigation or controls. */
+@media (max-width: 900px) {
+  .mb-home-discipline { display: none; }
+}
