@@ -5,10 +5,11 @@
 <div class="mb-portfolio-grid">
 {{ $projects := where site.RegularPages "Section" "projects" }}
 {{ range sort $projects "Weight" "asc" }}
+  {{ $project := . }}
   <a class="mb-portfolio-item" href="{{ .RelPermalink }}">
     <div class="visual">
       {{ with .Params.image }}
-      <img src="{{ . | relURL }}" alt="{{ $.Params.alt }}" loading="lazy" decoding="async">
+      <img src="{{ . | relURL }}" alt="{{ $project.Params.alt }}" loading="lazy" decoding="async">
       {{ else }}
       <span class="empty">+</span>
       {{ end }}
