@@ -473,12 +473,9 @@ a { -webkit-tap-highlight-color: transparent; }
 
 
 /* --- Homepage viewport strategy ---
-   Wide desktop: fixed-size portrait floats in the unused right-side field.
-   Mid-size/tablet: portrait is sacrificed so navigation never moves.
-   Tall phones: a smaller fixed-size portrait sits above the unchanged left edge.
-   Short/landscape phones: portrait stays hidden. */
+   Navigation always wins. The portrait is only shown when there is unquestionably
+   enough room for it to live in its own right-side field without touching the menu. */
 
-/* Keep the Contour menu aligned exactly where it would be without a portrait. */
 .home-menu-frame {
   overflow: visible;
 }
@@ -487,27 +484,43 @@ a { -webkit-tap-highlight-color: transparent; }
   min-width: 0;
 }
 
-/* Wide desktop / large laptop. The photo does not resize while the window is dragged. */
-@media (min-width: 1220px) and (min-height: 560px) {
+/* Hide portrait and decorative top label by default. */
+.mb-home-portrait,
+.mb-home-discipline {
+  display: none;
+}
+
+/* Very wide desktop only. The image is fixed-size and anchored to the right edge,
+   completely independent of the navigation geometry. */
+@media (min-width: 1540px) and (min-height: 700px) {
+  .mb-home-discipline {
+    display: block;
+  }
+
   .mb-home-portrait {
     display: block;
-    left: 58vw;
-    right: var(--frame-pad);
+    left: auto;
+    right: clamp(54px, 6vw, 110px);
     top: 50%;
     width: 280px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
     transform: translateY(-50%);
   }
-  .mb-home-portrait img { width: 280px; }
+
+  .mb-home-portrait img {
+    width: 280px;
+  }
 }
 
-/* On anything narrower than a roomy desktop, the top label is expendable too. */
-@media (max-width: 1219px) {
-  .mb-home-discipline { display: none; }
+/* Tablet / laptop / phone: preserve stock Contour navigation. */
+@media (max-width: 1539px) {
+  .mb-home-portrait,
+  .mb-home-discipline {
+    display: none !important;
+  }
 }
 
-/* Restore a clean stock-Contour mobile menu when the portrait is absent. */
+/* Mobile: no portrait. Use all available room for navigation. */
 @media (max-width: 760px) {
   .layout-home { --sidebar-w: 21vw; }
 
@@ -524,15 +537,15 @@ a { -webkit-tap-highlight-color: transparent; }
   }
 
   .home-menu-frame .menu-list {
-    inline-size: calc(100vw - var(--sidebar-w) - var(--frame-pad) - var(--frame-pad));
-    max-inline-size: calc(100vw - var(--sidebar-w) - var(--frame-pad) - var(--frame-pad));
+    inline-size: calc(100vw - var(--sidebar-w) - (2 * var(--frame-pad)));
+    max-inline-size: calc(100vw - var(--sidebar-w) - (2 * var(--frame-pad)));
   }
 
   .home-menu-frame .menu-list a {
     max-inline-size: 100%;
     gap: 0;
-    padding-inline: .14em;
-    font-size: clamp(18px, min(4.6vh, 9.4cqw), 32px);
+    padding-inline: .12em;
+    font-size: clamp(18px, min(4.6vh, 9.2cqw), 31px);
     letter-spacing: -.02em;
   }
 
@@ -542,61 +555,37 @@ a { -webkit-tap-highlight-color: transparent; }
     right: auto;
     bottom: calc(var(--frame-pad) + 2px);
     width: max-content;
-    max-width: calc(var(--sidebar-w) - 12px);
+    max-width: calc(var(--sidebar-w) - 10px);
     transform: translateX(-50%);
     overflow: hidden;
-    text-overflow: clip;
     font-size: 8px;
-    letter-spacing: .04em;
+    letter-spacing: .035em;
     line-height: 1;
     white-space: nowrap;
   }
 }
 
-/* Tall portrait phones get the photo back, but the menu's left edge is unchanged. */
-@media (max-width: 480px) and (min-height: 780px) and (orientation: portrait) {
-  .mb-home-portrait {
-    display: block;
-    left: var(--sidebar-w);
-    right: 0;
-    top: 66px;
-    width: 168px;
-    margin-left: auto;
-    margin-right: auto;
-    transform: none;
-  }
-  .mb-home-portrait img { width: 168px; }
-  .mb-home-portrait figcaption {
-    margin-top: 5px;
-    font-size: 7px;
-    line-height: 1.3;
-  }
+/* On very narrow phones, reduce only the navigation type—not the image,
+   because the image is already gone. */
+@media (max-width: 390px) {
+  .layout-home { --sidebar-w: 19vw; }
 
+  .home-menu-frame .menu-list a {
+    font-size: clamp(17px, min(4.3vh, 8.4cqw), 27px);
+  }
+}
+
+/* Short landscape devices need an even more conservative menu. */
+@media (max-height: 620px) and (max-width: 900px) {
   .home-menu-frame {
     justify-content: flex-start;
-    padding-top: 278px;
-    padding-bottom: 44px;
+    padding-top: 34px;
+    padding-bottom: 34px;
   }
-}
 
-/* Very narrow tall phones: move the same composition slightly upward; don't scale continuously. */
-@media (max-width: 380px) and (min-height: 780px) and (orientation: portrait) {
-  .mb-home-portrait {
-    top: 58px;
-    width: 156px;
-  }
-  .mb-home-portrait img { width: 156px; }
-  .home-menu-frame { padding-top: 252px; }
-}
-
-/* Short or landscape phones prioritize navigation completely. */
-@media (max-width: 760px) and (max-height: 779px),
-       (max-width: 900px) and (orientation: landscape) {
-  .mb-home-portrait { display: none; }
-  .home-menu-frame {
-    justify-content: center;
-    padding-top: var(--frame-pad);
-    padding-bottom: var(--frame-pad);
+  .home-menu-frame .menu-list a {
+    padding-block: 3px;
+    font-size: clamp(16px, 4.2vh, 24px);
   }
 }
 
