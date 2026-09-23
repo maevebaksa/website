@@ -1,0 +1,55 @@
+baseURL = "https://maevebaksa.github.io/website/"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Maeve Baksa"
+theme = "contour"
+enableRobotsTXT = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["html", "json"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = false
+
+[params]
+  author = "Maeve Baksa"
+  description = "Mechanical engineer working across additive manufacturing, robotics, machine control, and technical software."
+  logoName = "MAEVE"
+  logoTLD = ".BAKSA"
+  kicker = "MECHANICAL ENGINEERING / TUFTS"
+  axis = "MECHANICS / MATERIALS / CONTROL"
+  coords = "DESIGN — BUILD — TEST"
+  fg = "#F4F1E8"
+  bg = "#0B0B0A"
+  dateFormat = "2006.01.02"
+  showCodeCopy = true
+  github = "https://github.com/maevebaksa"
+
+[[menu.main]]
+  name = "Portfolio"
+  pageRef = "/portfolio"
+  weight = 1
+[[menu.main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 2
+[[menu.main]]
+  name = "Notes"
+  pageRef = "/notes"
+  weight = 3
+[[menu.main]]
+  name = "CV"
+  pageRef = "/cv"
+  weight = 4
+[[menu.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 5
