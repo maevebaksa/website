@@ -550,18 +550,7 @@ a { -webkit-tap-highlight-color: transparent; }
   }
 
   .home-panel .copyright {
-    writing-mode: horizontal-tb;
-    left: 50%;
-    right: auto;
-    bottom: calc(var(--frame-pad) + 2px);
-    width: max-content;
-    max-width: calc(var(--sidebar-w) - 10px);
-    transform: translateX(-50%);
-    overflow: hidden;
-    font-size: 8px;
-    letter-spacing: .035em;
-    line-height: 1;
-    white-space: nowrap;
+    display: none;
   }
 }
 
@@ -605,4 +594,37 @@ a { -webkit-tap-highlight-color: transparent; }
   margin: auto;
   object-fit: contain;
   object-position: 50% 50%;
+}
+
+
+/* Short viewport handling: width alone is not enough.
+   If vertical room is tight, preserve the menu and sacrifice decoration. */
+@media (max-height: 720px) {
+  .mb-home-portrait,
+  .mb-home-discipline {
+    display: none !important;
+  }
+
+  .home-menu-frame {
+    justify-content: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .home-menu-frame .menu-list a {
+    padding-block: 4px;
+    font-size: clamp(24px, 6vh, 42px);
+  }
+}
+
+@media (max-height: 560px) {
+  .home-menu-frame {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .home-menu-frame .menu-list a {
+    padding-block: 2px;
+    font-size: clamp(20px, 5.5vh, 32px);
+  }
 }
