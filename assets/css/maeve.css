@@ -31,20 +31,21 @@ a { -webkit-tap-highlight-color: transparent; }
 }
 
 .mb-home-cluster {
-  width: 100%;
+  width: max-content;
+  max-width: 100%;
   min-width: 0;
   display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-columns: max-content 260px;
   align-items: center;
-  column-gap: clamp(44px, 5vw, 88px);
+  justify-content: start;
+  column-gap: 104px;
   pointer-events: none;
 }
 .mb-home-cluster .menu,
 .mb-home-cluster a { pointer-events: auto; }
 
 .mb-home-portrait {
-  width: clamp(180px, 24vw, 340px);
-  max-width: min(100%, 340px);
+  width: 260px;
   margin: 0;
   justify-self: center;
   align-self: center;
@@ -52,10 +53,10 @@ a { -webkit-tap-highlight-color: transparent; }
 }
 .mb-home-portrait img {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: 260px;
   height: auto;
-  max-height: 54vh;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
   object-position: center;
   border: 1px solid rgba(var(--fg-rgb), .34);
@@ -174,20 +175,19 @@ a { -webkit-tap-highlight-color: transparent; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(10px, 1.5vw, 20px);
+  padding: 18px;
   background: var(--mb-soft);
   border-bottom: 1px solid var(--mb-rule);
 }
 .mb-portfolio-item .visual img {
   display: block;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
-  margin: auto;
-  padding: 0;
+  margin: 0;
   object-fit: contain;
-  object-position: 50% 50%;
+  object-position: center center;
 }
 .mb-portfolio-item .visual .empty { font-size: 34px; opacity: .28; }
 .mb-portfolio-item .labels {
@@ -424,11 +424,24 @@ a { -webkit-tap-highlight-color: transparent; }
   opacity: .72;
 }
 
-@media (max-width: 1050px) {
-  .mb-home-cluster { column-gap: clamp(28px, 4vw, 52px); }
-  .mb-home-portrait {
-    width: clamp(150px, 22vw, 260px);
+@media (max-width: 1180px) {
+  .mb-home-cluster {
+    grid-template-columns: 1fr;
+    row-gap: 26px;
+    width: max-content;
     max-width: 100%;
+    justify-items: center;
+  }
+  .mb-home-portrait {
+    grid-row: 1;
+    width: 260px;
+  }
+  .mb-home-portrait img {
+    width: 260px;
+  }
+  .mb-home-cluster .menu {
+    grid-row: 2;
+    justify-self: center;
   }
 }
 
@@ -486,33 +499,36 @@ a { -webkit-tap-highlight-color: transparent; }
   .home-menu-frame {
     justify-content: center;
     overflow-y: auto;
-    padding-top: clamp(64px, 9vh, 84px);
-    padding-bottom: clamp(38px, 6vh, 58px);
+    padding-top: 70px;
+    padding-bottom: 52px;
   }
+
   .mb-home-cluster {
-    width: 100%;
-    min-width: 0;
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: clamp(12px, 2.5vh, 20px);
-    align-items: center;
+    width: max-content;
+    max-width: calc(100vw - var(--sidebar-w) - (2 * var(--frame-pad)));
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+    justify-items: center;
   }
+
   .mb-home-portrait {
     grid-row: 1;
-    width: min(52vw, 200px);
-    max-width: calc(100vw - var(--sidebar-w) - (2 * var(--frame-pad)));
+    width: 220px;
+    max-width: none;
     justify-self: center;
   }
   .mb-home-portrait img {
-    width: 100%;
+    width: 220px;
     height: auto;
-    max-height: 25vh;
-    object-fit: contain;
+    max-width: none;
+    max-height: none;
   }
   .mb-home-portrait figcaption {
     text-align: center;
     font-size: 8px;
     line-height: 1.35;
   }
+
   .mb-home-cluster .menu {
     grid-row: 2;
     width: max-content;
@@ -525,7 +541,7 @@ a { -webkit-tap-highlight-color: transparent; }
   }
   .home-menu-frame .menu-list a {
     max-inline-size: 100%;
-    padding: clamp(5px, .9vh, 8px) .08em;
+    padding: 6px .08em;
     font-size: clamp(18px, min(4.3vh, 7.8vw), 30px);
     letter-spacing: -.02em;
   }
@@ -547,10 +563,8 @@ a { -webkit-tap-highlight-color: transparent; }
     font-size: 7px;
     letter-spacing: .07em;
   }
-  .mb-home-portrait {
-    width: min(48vw, 170px);
-    max-width: calc(100vw - var(--sidebar-w) - (2 * var(--frame-pad)));
-  }
+  .mb-home-portrait { width: 200px; }
+  .mb-home-portrait img { width: 200px; }
   .home-menu-frame .menu-list a {
     font-size: clamp(17px, min(4.1vh, 7.5vw), 26px);
   }
@@ -564,8 +578,8 @@ a { -webkit-tap-highlight-color: transparent; }
     justify-content: flex-start;
     padding-top: 54px;
   }
-  .mb-home-portrait { width: min(36vw, 132px); }
-  .mb-home-portrait img { max-height: 20vh; }
+  .mb-home-portrait,
+  .mb-home-portrait img { width: 180px; }
   .mb-home-portrait figcaption { display: none; }
   .home-menu-frame .menu-list a {
     padding-block: 4px;
