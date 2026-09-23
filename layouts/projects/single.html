@@ -10,13 +10,16 @@
 
     <div class="post-body">
       <section class="mb-project-hero">
-        <div class="image">
-          {{ with .Params.image }}
-          <img src="{{ . | relURL }}" alt="{{ $.Params.alt }}" decoding="async">
-          {{ else }}
-          <span class="mb-ascii">+</span>
-          {{ end }}
-        </div>
+        {{ with .Params.image }}
+        <figure class="image">
+          <img src="{{ . | relURL }}"
+               alt="{{ $.Params.alt }}"
+               loading="eager"
+               decoding="async"
+               fetchpriority="high">
+        </figure>
+        {{ end }}
+
         <div class="mb-project-facts">
           {{ with .Params.type }}<div><span>TYPE</span><strong>{{ . }}</strong></div>{{ end }}
           {{ with .Params.year }}<div><span>PERIOD</span><strong>{{ . }}</strong></div>{{ end }}
