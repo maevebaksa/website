@@ -1,25 +1,19 @@
 ---
-title: "Voron 2.4 Toolchanger"
-description: "Four-tool Voron platform integrating tool identity, sensing, mapping, failover, and distributed toolhead electronics."
-image: "images/voron-24-toolchanger.webp"
+title: "Voron 2.4 — Toolchanger"
+weight: 1
+description: "A Voron 2.4 extensively modified into a modular multi-tool research and development platform."
+type: "COREXY / TOOLCHANGER"
+year: "2025—2026"
+image: "images/voron-24-toolchanger.jpg"
+alt: "Modified Voron 2.4 with multiple docked toolheads"
+domain: "Mechanical systems / additive manufacturing"
+status: "Active research platform"
 tags: ["portfolio"]
 ---
-<div class="mb-project-hero">
-  <div class="image"><img src="../../images/voron-24-toolchanger.webp" alt="Black-and-red Voron 2.4 with four docked toolheads"></div>
-  <div class="mb-project-facts">
-    <div><span>TYPE</span><strong>COREXY / SYSTEMS</strong></div>
-    <div><span>PERIOD</span><strong>2026</strong></div>
-    <div><span>DOMAIN</span><strong>Mechanical systems / additive manufacturing</strong></div>
-    <div><span>STATUS</span><strong>Development platform / documented work</strong></div>
-  </div>
-</div>
-
-<p class="mb-page-lede">Four-tool Voron platform integrating tool identity, sensing, mapping, failover, and distributed toolhead electronics.</p>
-
 ## System integration
 
-The machine is a four-tool Voron 2.4 built around physical/logical tool separation, repeatable toolchanging, per-tool filament state, sensing, calibration, and host-side workflow integration.
+The base machine is a Voron 2.4, a moving-gantry CoreXY architecture. My build adds a modular toolchanging system, per-tool electronics, sensing, tool mapping, automated failover, calibration workflows, and host-side software integration.
 
-The project became as much a systems problem as a mechanical one: tool identity has to remain coherent across G-code, Klipper, Moonraker, the toolchanger stack, filament metadata, user interfaces, and the actual hardware.
+It also serves as the motion platform for my viscoelastic-material research, where standard FDM tools and experimental material-delivery tools can share the same machine.
 
-[Read the full technical note](../../notes/the-voron-toolchanger-is-a-systems-project/)
+[Read the systems note](../../notes/the-voron-toolchanger-is-a-systems-project/)

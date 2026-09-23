@@ -1,14 +1,24 @@
 <div class="mb-portfolio-intro">
-<p class="mb-page-lede">Machines and technical systems I’ve built, modified, or used as development platforms.</p>
+  <p class="mb-page-lede">Machines and technical systems I’ve built, modified, or used as development platforms.</p>
 </div>
+
 <div class="mb-portfolio-grid">
-{{ range hugo.Data.projects.project }}
-  {{ $p := site.GetPage (printf "/projects/%s" .slug) }}
-  <a class="mb-portfolio-item" href="{{ $p.RelPermalink }}">
-    <div class="visual">{{ if .image }}<img src="{{ .image | relURL }}" alt="{{ .alt }}">{{ else }}<span class="empty">[ + ]</span>{{ end }}</div>
-    <div class="labels"><span>{{ .type }}</span><span>{{ .year }}</span></div>
-    <h3>{{ .title }}</h3>
-    <p>{{ .description }}</p>
+{{ $projects := where site.RegularPages "Section" "projects" }}
+{{ range sort $projects "Weight" "asc" }}
+  <a class="mb-portfolio-item" href="{{ .RelPermalink }}">
+    <div class="visual">
+      {{ with .Params.image }}
+      <img src="{{ . | relURL }}" alt="{{ $.Params.alt }}" loading="lazy" decoding="async">
+      {{ else }}
+      <span class="empty">+</span>
+      {{ end }}
+    </div>
+    <div class="labels">
+      <span>{{ .Params.type }}</span>
+      <span>{{ .Params.year }}</span>
+    </div>
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Description }}</p>
   </a>
 {{ end }}
 </div>

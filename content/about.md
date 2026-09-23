@@ -5,9 +5,9 @@ description: "Mechanical engineer working across machine design, materials, addi
 <p class="mb-page-lede">I build and modify machines where mechanics, materials, and software all matter at the same time.</p>
 
 <div class="mb-specs">
-  <div><span>EDUCATION / 01</span><strong>B.S. Mechanical Engineering<br>Union College · 2026</strong></div>
-  <div><span>EDUCATION / 02</span><strong>M.S. Mechanical Engineering<br>Tufts University · ongoing</strong></div>
-  <div><span>SECONDARY /</span><strong>Minor in Mathematics<br>Union College</strong></div>
+  <div><span>UNDERGRADUATE</span><strong>B.S. Mechanical Engineering<br>Union College · 2026</strong></div>
+  <div><span>GRADUATE</span><strong>M.S. Mechanical Engineering<br>Tufts University · ongoing</strong></div>
+  <div><span>MINOR</span><strong>Mathematics<br>Union College</strong></div>
 </div>
 
 ## Working across layers
@@ -19,17 +19,22 @@ description: "Mechanical engineer working across machine design, materials, addi
   <div><b>VALIDATION</b><p>Measure first, isolate layers, preserve working behavior, and document limitations.</p></div>
 </div>
 
+<figure class="mb-about-photo">
+  <img src="../images/personal-print-lab.jpg" alt="Maeve Baksa's personal 3D printer lab in Medford">
+  <figcaption>Personal print lab · Medford · 2026</figcaption>
+</figure>
+
 ## Current direction
 
 My work is centered on additive manufacturing, machine design, robotics, soft-material systems, nonstandard kinematics, and the interaction between mechanical systems and machine-control software.
 
-I tend to use printers as development platforms rather than sealed appliances: change the mechanism, instrument it, change the firmware or host software when needed, and keep enough documentation that the result can be understood later.
+I use printers as development platforms: change the mechanism, instrument it, change the firmware or host software when needed, and document the result well enough to reproduce and maintain it.
 
 ## Research
 
-At Union College, my senior thesis work focused on hybrid solar-wind systems and a portable campus charging system with an IoT/digital-twin component. I have also worked on two-part silicone extrusion for spatially varying Shore hardness, including high-viscosity pumping and integration with a toolchanging motion platform.
+My current work includes multi-material additive manufacturing for viscoelastic materials, with an emphasis on silicone delivery, variable Shore hardness, and toolchanging systems.
 
-Earlier work on Project Nibbler explored composite extrusion using plastic and paper waste as filler in UV-curable resin.
+At Union College, my undergraduate research also included automated solar-panel characterization and Project Nibbler, a composite-extrusion system intended to shred, mix, and extrude household waste into new objects.
 
 ## Elsewhere
 

@@ -38,3 +38,14 @@ Public email: `hi@maevebaksa.com`.
 ## Images
 
 Project/profile imagery should live in `static/images/` and be referenced with site-local paths. Do not introduce new dependencies on the retired WordPress `wp-content` tree.
+
+
+## Editing with Pages CMS
+
+This repository includes a root-level `.pages.yml` configuration for [Pages CMS](https://pagescms.org/).
+
+1. Sign in at `app.pagescms.org` with GitHub.
+2. Install/authorize the Pages CMS GitHub App for `maevebaksa/website`.
+3. Open this repository in Pages CMS.
+
+Projects, technical notes, main pages, photography entries, and repository-hosted images can then be edited from the CMS. Saving content commits directly to GitHub, which triggers the existing GitHub Pages deployment workflow.

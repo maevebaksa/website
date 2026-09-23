@@ -1,7 +1,7 @@
 # Photography data
-# Add photos as:
+# Manage these entries through Pages CMS or edit by hand:
 #
 # [[photo]]
-# src = "/photography/example.jpg"
+# src = "images/photography/example.jpg"
 # alt = "Description of the photograph"
 # caption = "Optional caption"

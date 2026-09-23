@@ -8,21 +8,25 @@
 {{ partial "field-frame.html" (dict "class" "home-field" "frame" "home") }}
 {{ partial "site-controls.html" . }}
 
-<div class="home-menu-frame">
-  <main class="menu">
-    {{ partial "menu.html" . }}
-  </main>
-</div>
+<div class="mb-home-discipline">MECHANICS / MATERIALS / CONTROL</div>
 
-<figure class="mb-home-portrait">
-  <img src="{{ "images/maeve-profile.webp" | relURL }}"
-       alt="Portrait of Maeve Baksa"
-       width="1254"
-       height="1254"
-       loading="eager"
-       decoding="async">
-  <figcaption>Maeve Baksa · mechanical engineer</figcaption>
-</figure>
+<div class="home-menu-frame">
+  <div class="mb-home-cluster">
+    <main class="menu">
+      {{ partial "menu.html" . }}
+    </main>
+
+    <figure class="mb-home-portrait">
+      <img src="{{ "images/maeve-profile.jpg" | relURL }}"
+           alt="Portrait of Maeve Baksa"
+           width="1254"
+           height="1254"
+           loading="eager"
+           decoding="async">
+      <figcaption>Maeve Baksa · Mechanical Engineer</figcaption>
+    </figure>
+  </div>
+</div>
 
 {{ partial "logo.html" (dict "heading" true) }}
 {{ end }}

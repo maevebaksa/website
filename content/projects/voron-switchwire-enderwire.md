@@ -1,21 +1,15 @@
 ---
-title: "Voron Switchwire / Enderwire"
-description: "A compact CoreXZ development machine used for Klipper, interface, camera, and motion-control work."
-image: "images/switchwire-enderwire.webp"
+title: "Voron Switchwire — Enderwire Conversion"
+weight: 3
+description: "A Voron Switchwire / Enderwire conversion used for CoreXZ motion, Klipper, interface, and camera-development work."
+type: "COREXZ / END ERWIRE"
+year: "2026"
+image: "images/voron-switchwire.jpg"
+alt: "Green-and-black enclosed Voron Switchwire Enderwire conversion"
+domain: "Mechanical systems / additive manufacturing"
+status: "Development platform"
 tags: ["portfolio"]
 ---
-<div class="mb-project-hero">
-  <div class="image"><img src="../../images/switchwire-enderwire.webp" alt="Enclosed black-and-green Voron Switchwire / Enderwire 3D printer"></div>
-  <div class="mb-project-facts">
-    <div><span>TYPE</span><strong>COREXZ / PLATFORM</strong></div>
-    <div><span>PERIOD</span><strong>2026</strong></div>
-    <div><span>DOMAIN</span><strong>Mechanical systems / additive manufacturing</strong></div>
-    <div><span>STATUS</span><strong>Development platform / documented work</strong></div>
-  </div>
-</div>
+## CoreXZ platform
 
-<p class="mb-page-lede">A compact CoreXZ development machine used for Klipper, interface, camera, and motion-control work.</p>
-
-## Development platform
-
-The Switchwire / Enderwire is a compact machine I use for controls, KlipperScreen, camera, networking, and printer-host integration work. Its CoreXZ architecture makes it a useful contrast to the CoreXY, delta, belt, and polar machines elsewhere in the portfolio.
+The Switchwire is Voron's CoreXZ bedslinger architecture. This machine is an Ender-derived conversion and serves as a compact platform for KlipperScreen, camera, networking, motion-control, and printer-host integration work.

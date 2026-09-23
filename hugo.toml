@@ -1,4 +1,4 @@
-baseURL = "https://www.maevebaksa.com/"
+baseURL = "https://maevebaksa.github.io/website/"
 locale = "en-US"
 defaultContentLanguage = "en"
 title = "Maeve Baksa"
@@ -26,12 +26,13 @@ enableRobotsTXT = true
   logoTLD = ".BAKSA"
   kicker = "MECHANICAL ENGINEERING / TUFTS"
   axis = "MECHANICS / MATERIALS / CONTROL"
-  coords = "DESIGN — BUILD — TEST"
+  coords = ""
   fg = "#F4F1E8"
   bg = "#0B0B0A"
   dateFormat = "2006.01.02"
   showCodeCopy = true
   github = "https://github.com/maevebaksa"
+  email = "hi@maevebaksa.com"
 
 [[menu.main]]
   name = "Portfolio"

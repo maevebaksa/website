@@ -1,0 +1,39 @@
+{{ define "main" }}
+<main class="content">
+  <article class="post">
+    <header>
+      <div class="post-meta">
+        <span class="kicker">Portfolio/</span>
+      </div>
+      <h1 class="post-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="post-body">
+      <section class="mb-project-hero">
+        <div class="image">
+          {{ with .Params.image }}
+          <img src="{{ . | relURL }}" alt="{{ $.Params.alt }}" decoding="async">
+          {{ else }}
+          <span class="mb-ascii">+</span>
+          {{ end }}
+        </div>
+        <div class="mb-project-facts">
+          {{ with .Params.type }}<div><span>TYPE</span><strong>{{ . }}</strong></div>{{ end }}
+          {{ with .Params.year }}<div><span>PERIOD</span><strong>{{ . }}</strong></div>{{ end }}
+          {{ with .Params.domain }}<div><span>DOMAIN</span><strong>{{ . }}</strong></div>{{ end }}
+          {{ with .Params.status }}<div><span>STATUS</span><strong>{{ . }}</strong></div>{{ end }}
+        </div>
+      </section>
+
+      {{ with .Description }}<p class="mb-page-lede">{{ . }}</p>{{ end }}
+      {{ .Content }}
+    </div>
+
+    {{ with .GetTerms "tags" }}
+    <nav class="post-tags">
+      {{ range . }}<a class="kicker" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
+    </nav>
+    {{ end }}
+  </article>
+</main>
+{{ end }}

@@ -1,21 +1,18 @@
 ---
-title: "Compact Cantilever Printer"
-description: "A small-format cantilever machine focused on compact packaging and accessible hardware."
-image: "images/compact-cantilever-printer.webp"
+title: "Rat Rig V-Minion"
+slug: "rat-rig-v-minion"
+weight: 5
+description: "A compact Rat Rig V-Minion used as a cantilevered Cartesian development platform."
+type: "CARTESIAN / CANTILEVER"
+year: "2026"
+image: "images/ratrig-v-minion.jpg"
+alt: "Green-and-black Rat Rig V-Minion 3D printer"
+domain: "Mechanical systems / additive manufacturing"
+status: "Development platform"
+aliases:
+  - "/projects/compact-cantilever-printer/"
 tags: ["portfolio"]
 ---
-<div class="mb-project-hero">
-  <div class="image"><img src="../../images/compact-cantilever-printer.webp" alt="Compact black-and-green cantilever 3D printer"></div>
-  <div class="mb-project-facts">
-    <div><span>TYPE</span><strong>CARTESIAN / PROTOTYPE</strong></div>
-    <div><span>PERIOD</span><strong>2026</strong></div>
-    <div><span>DOMAIN</span><strong>Mechanical systems / additive manufacturing</strong></div>
-    <div><span>STATUS</span><strong>Development platform / documented work</strong></div>
-  </div>
-</div>
+## Development platform
 
-<p class="mb-page-lede">A small-format cantilever machine focused on compact packaging and accessible hardware.</p>
-
-## Compact architecture
-
-A small cantilever-format machine used to explore packaging, maintainability, and simple motion architecture at a reduced physical scale.
+The V-Minion is a compact cantilevered Cartesian bedslinger. I use this machine as part of a mixed-kinematics fleet for testing common Klipper workflows and hardware standardization across very different printer architectures.

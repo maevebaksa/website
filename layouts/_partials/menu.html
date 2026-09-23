@@ -1,0 +1,6 @@
+{{- $page := . -}}
+<nav class="menu-list">
+  {{- range site.Menus.main }}
+  <a href="{{ .URL }}"{{ if or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}/</a>
+  {{- end }}
+</nav>

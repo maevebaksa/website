@@ -1,23 +1,19 @@
 ---
-title: "Silicone Extrusion Platform"
-description: "A multi-tool research platform for controlled two-part silicone extrusion and spatially varying material properties."
-image: ""
+title: "Multi-Material Viscoelastic Extrusion Platform"
+weight: 10
+description: "A research platform for additive manufacturing with multiple viscoelastic materials and spatially varying Shore hardness."
+type: "RESEARCH / MATERIALS"
+year: "2025—2026"
+image: "images/silicone-research.jpg"
+alt: "Voron-based research platform with toolchanger and material-delivery hardware"
+domain: "Additive manufacturing / soft materials"
+status: "Research platform"
 tags: ["portfolio"]
 ---
-<div class="mb-project-hero">
-  <div class="image"><span class="mb-ascii">[ + ]</span></div>
-  <div class="mb-project-facts">
-    <div><span>TYPE</span><strong>RESEARCH / MATERIALS</strong></div>
-    <div><span>PERIOD</span><strong>2025—</strong></div>
-    <div><span>DOMAIN</span><strong>Mechanical systems / additive manufacturing</strong></div>
-    <div><span>STATUS</span><strong>Development platform / documented work</strong></div>
-  </div>
-</div>
-
-<p class="mb-page-lede">A multi-tool research platform for controlled two-part silicone extrusion and spatially varying material properties.</p>
-
 ## Research direction
 
-This platform supports experiments in two-part silicone delivery, passive flow conditioning, multi-material deposition, and variable Shore-hardness structures. The motion system and fluid-delivery system are treated as coupled parts of the same process.
+The goal is to fabricate parts with multiple viscoelastic materials, including silicone, so material properties can vary within a single part. The system combines a modular toolchanger with experimental material-delivery hardware.
 
-[Read the full technical note](../../notes/a-peristaltic-pump-a-screw-and-uncooperative-silicone/)
+Testing has included peristaltic pumping, a downstream screw stage used as a passive flow-conditioning element, modular toolhead electronics, and software-controlled material ratios.
+
+[Read the extrusion note](../../notes/a-peristaltic-pump-a-screw-and-uncooperative-silicone/)

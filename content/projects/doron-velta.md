@@ -1,21 +1,15 @@
 ---
 title: "Doron Velta"
-description: "A compact delta platform used as part of a broader mixed-kinematics printer fleet."
-image: "images/doron-velta.webp"
+weight: 4
+description: "An enclosed Doron Velta delta printer used to explore a compact parallel-kinematic architecture."
+type: "DELTA / ENCLOSED"
+year: "2026"
+image: "images/doron-velta.jpg"
+alt: "Black-and-pink Doron Velta delta 3D printer"
+domain: "Mechanical systems / additive manufacturing"
+status: "Development platform"
 tags: ["portfolio"]
 ---
-<div class="mb-project-hero">
-  <div class="image"><img src="../../images/doron-velta.webp" alt="Black-and-pink Doron Velta delta 3D printer"></div>
-  <div class="mb-project-facts">
-    <div><span>TYPE</span><strong>DELTA / MACHINE</strong></div>
-    <div><span>PERIOD</span><strong>2026</strong></div>
-    <div><span>DOMAIN</span><strong>Mechanical systems / additive manufacturing</strong></div>
-    <div><span>STATUS</span><strong>Development platform / documented work</strong></div>
-  </div>
-</div>
-
-<p class="mb-page-lede">A compact delta platform used as part of a broader mixed-kinematics printer fleet.</p>
-
 ## Delta platform
 
-The Doron Velta adds a delta mechanism to the printer fleet and provides a compact platform for comparing motion architectures and host-side workflows.
+The Doron Velta adds a delta mechanism to the fleet and provides a useful contrast to CoreXY, CoreXZ, Cartesian, belt, and polar machines when comparing motion architecture, calibration, and host-side workflows.

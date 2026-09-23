@@ -1,21 +1,15 @@
 ---
-title: "Creality CR-30 / 3DPrintMill"
-description: "Belt-printer control and reliability work, including Klipper pause/resume behavior and continuous-axis workflows."
-image: "images/cr30-belt-printer.webp"
+title: "Creality CR-30 3DPrintMill"
+weight: 7
+description: "A Creality CR-30 continuous-belt printer modified for Klipper-based control and recovery workflows."
+type: "BELT / CONTINUOUS"
+year: "2026"
+image: "images/creality-cr30.jpg"
+alt: "Modified Creality CR-30 3DPrintMill belt printer"
+domain: "Mechanical systems / additive manufacturing"
+status: "Development platform"
 tags: ["portfolio"]
 ---
-<div class="mb-project-hero">
-  <div class="image"><img src="../../images/cr30-belt-printer.webp" alt="Creality CR-30 belt 3D printer with custom Klipper-based controls"></div>
-  <div class="mb-project-facts">
-    <div><span>TYPE</span><strong>BELT / PRODUCTION</strong></div>
-    <div><span>PERIOD</span><strong>2026</strong></div>
-    <div><span>DOMAIN</span><strong>Mechanical systems / additive manufacturing</strong></div>
-    <div><span>STATUS</span><strong>Development platform / documented work</strong></div>
-  </div>
-</div>
-
-<p class="mb-page-lede">Belt-printer control and reliability work, including Klipper pause/resume behavior and continuous-axis workflows.</p>
-
 ## Belt printing
 
-The CR-30 is a useful platform for control problems that do not appear on conventional printers: an effectively continuous build axis, unusual pause/resume geometry, and recovery behavior that must return to the correct location on an angled belt.
+The CR-30 is a conveyor-belt printer built around an angled motion system and effectively continuous build direction. My work on it focuses on Klipper control, reliable pause/resume behavior, and recovery logic that returns the toolhead to the correct position on the belt.
