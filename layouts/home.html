@@ -32,4 +32,33 @@
 </div>
 
 {{ partial "logo.html" (dict "heading" true) }}
+
+<script>
+(function () {
+  const portrait = document.querySelector('.mb-home-portrait');
+  const menu = document.querySelector('.home-menu-frame .menu');
+  if (!portrait || !menu) return;
+
+  function mbPortraitLayout() {
+    portrait.classList.remove('is-safe');
+    if (!window.matchMedia('(min-width: 1800px) and (min-height: 700px)').matches) return;
+    requestAnimationFrame(function () {
+      const m = menu.getBoundingClientRect();
+      const p = portrait.getBoundingClientRect();
+      const safe = (p.left - m.right) >= 110 &&
+                   p.right <= window.innerWidth - 28 &&
+                   p.top >= 28 &&
+                   p.bottom <= window.innerHeight - 28;
+      portrait.classList.toggle('is-safe', safe);
+    });
+  }
+
+  window.addEventListener('resize', mbPortraitLayout, { passive: true });
+  window.addEventListener('orientationchange', mbPortraitLayout, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(mbPortraitLayout).observe(menu);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(mbPortraitLayout);
+  window.addEventListener('load', mbPortraitLayout, { once: true });
+  mbPortraitLayout();
+})();
+</script>
 {{ end }}
