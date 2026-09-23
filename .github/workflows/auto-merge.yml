@@ -1,23 +1,26 @@
-name: Auto-merge trusted PRs
+name: Auto-approve trusted PRs
 
 on:
   pull_request_target:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, reopened, synchronize, ready_for_review]
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 
 jobs:
-  auto-merge:
+  approve:
     if: >-
       github.event.pull_request.draft == false &&
       (github.event.pull_request.user.login == 'maevebaksa' ||
-       github.event.pull_request.user.login == 'dependabot[bot]')
+       github.event.pull_request.user.login == 'dependabot[bot]' ||
+       github.event.pull_request.user.login == 'github-actions[bot]')
     runs-on: ubuntu-latest
     steps:
-      - name: Enable auto-merge after checks
+      - name: Approve pull request
         env:
           GH_TOKEN: ${{ github.token }}
-          PR_URL: ${{ github.event.pull_request.html_url }}
-        run: gh pr merge --auto --squash "$PR_URL"
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh api             --method POST             "repos/$REPO/pulls/$PR_NUMBER/reviews"             -f event=APPROVE             -f body="Automatically approved trusted pull request."
