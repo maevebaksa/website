@@ -2,7 +2,7 @@
 <p class="mb-page-lede">Machines and technical systems I’ve built, modified, or used as development platforms.</p>
 </div>
 <div class="mb-portfolio-grid">
-{{ range site.Data.projects.project }}
+{{ range hugo.Data.projects.project }}
   {{ $p := site.GetPage (printf "/projects/%s" .slug) }}
   <a class="mb-portfolio-item" href="{{ $p.RelPermalink }}">
     <div class="visual">{{ if .image }}<img src="{{ .image }}" alt="{{ .alt }}">{{ else }}<span class="empty">[ + ]</span>{{ end }}</div>

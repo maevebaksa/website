@@ -47,7 +47,7 @@
   <section class="mb-home-section">
     <div class="mb-section-heading"><span>01 / SELECTED WORK</span>{{ with site.GetPage "/portfolio" }}<a href="{{ .RelPermalink }}">ALL PROJECTS ↗</a>{{ end }}</div>
     <div class="mb-project-grid">
-    {{ range first 4 site.Data.projects.project }}
+    {{ range first 4 hugo.Data.projects.project }}
       {{ $p := site.GetPage (printf "/projects/%s" .slug) }}
       <a class="mb-project-card" href="{{ $p.RelPermalink }}">
         <div class="mb-project-media">{{ if .image }}<img src="{{ .image }}" alt="{{ .alt }}">{{ else }}<span class="mb-ascii">[ + ]</span>{{ end }}</div>

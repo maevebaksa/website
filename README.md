@@ -16,7 +16,7 @@ cd website
 hugo server -D
 ```
 
-Contour requires Hugo Extended 0.146.0 or newer.
+This site is tested with Hugo Extended 0.166.0 or newer.
 
 ## GitHub Pages
 

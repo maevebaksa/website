@@ -1,5 +1,5 @@
 baseURL = "https://maevebaksa.github.io/website/"
-languageCode = "en-us"
+locale = "en-US"
 defaultContentLanguage = "en"
 title = "Maeve Baksa"
 theme = "contour"
