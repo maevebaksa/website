@@ -1,77 +1,29 @@
 {{ define "main" }}
 {{ partial "contour-canvas.html" (dict "id" "terrain" "class" "page-terrain" "frame" "home") }}
+
 <aside class="site-panel home-panel">
   {{ partial "copyright.html" . }}
 </aside>
+
 {{ partial "field-frame.html" (dict "class" "home-field" "frame" "home") }}
 {{ partial "site-controls.html" . }}
+
+<div class="home-menu-frame">
+  <main class="menu">
+    {{ partial "menu.html" . }}
+  </main>
+</div>
+
+<figure class="mb-home-portrait">
+  <picture>
+    <source srcset="{{ "images/maeve-profile.webp" | relURL }}" type="image/webp">
+    <img src="https://avatars.githubusercontent.com/u/90474549?v=4"
+         alt="Portrait of Maeve Baksa"
+         loading="eager"
+         decoding="async">
+  </picture>
+  <figcaption>Maeve Baksa · mechanical engineer</figcaption>
+</figure>
+
 {{ partial "logo.html" (dict "heading" true) }}
-
-<main class="mb-home">
-  <header class="mb-topbar">
-    <div class="mb-topbar-id"><span class="mb-dot"></span> MAEVE.BAKSA / PORTFOLIO_2026</div>
-    <div class="mb-home-nav"><div class="menu">{{ partial "menu.html" . }}</div></div>
-  </header>
-
-  <section class="mb-hero">
-    <div class="mb-hero-copy">
-      <p class="mb-eyebrow">MECHANICAL ENGINEER / M.S. ME @ TUFTS</p>
-      <h2>MACHINES.<br>MATERIALS.<br>CONTROL.</h2>
-      <p class="mb-hero-deck">I build and modify unusual machines where mechanics, materials, and software all matter at the same time.</p>
-      <div class="mb-actions">
-        {{ with site.GetPage "/portfolio" }}<a class="mb-button mb-button-solid" href="{{ .RelPermalink }}">VIEW WORK ↗</a>{{ end }}
-        {{ with site.GetPage "/about" }}<a class="mb-button" href="{{ .RelPermalink }}">ABOUT ME</a>{{ end }}
-      </div>
-    </div>
-
-    <div class="mb-window">
-      <div class="mb-window-bar">
-        <span>[ FEATURED / 01 ]</span>
-        <span>VORON_2.4 // 04 TOOLS</span>
-      </div>
-      {{ with site.GetPage "/projects/voron-24-toolchanger" }}
-      <a class="mb-feature-image" href="{{ .RelPermalink }}">
-        <img src="https://www.maevebaksa.com/wp-content/uploads/2026/09/voron-24-toolchanger.webp" alt="Black-and-red Voron 2.4 with four docked toolheads">
-      </a>
-      {{ end }}
-      <div class="mb-window-footer"><span>COREXY / TOOLCHANGER</span><span>OPEN PROJECT →</span></div>
-    </div>
-  </section>
-
-  <section class="mb-status-grid" aria-label="Current profile">
-    <div><span>NOW /</span><strong>M.S. Mechanical Engineering</strong><em>Tufts University · ongoing</em></div>
-    <div><span>FOUNDATION /</span><strong>B.S. Mechanical Engineering</strong><em>Union College · 2026 · Mathematics minor</em></div>
-    <div><span>FOCUS /</span><strong>Additive manufacturing</strong><em>Machine design · robotics · control</em></div>
-  </section>
-
-  <section class="mb-home-section">
-    <div class="mb-section-heading"><span>01 / SELECTED WORK</span>{{ with site.GetPage "/portfolio" }}<a href="{{ .RelPermalink }}">ALL PROJECTS ↗</a>{{ end }}</div>
-    <div class="mb-project-grid">
-    {{ range first 4 hugo.Data.projects.project }}
-      {{ $p := site.GetPage (printf "/projects/%s" .slug) }}
-      <a class="mb-project-card" href="{{ $p.RelPermalink }}">
-        <div class="mb-project-media">{{ if .image }}<img src="{{ .image }}" alt="{{ .alt }}">{{ else }}<span class="mb-ascii">[ + ]</span>{{ end }}</div>
-        <div class="mb-project-meta"><span>{{ .type }}</span><span>{{ .year }}</span></div>
-        <h3>{{ .title }}</h3>
-        <p>{{ .description }}</p>
-      </a>
-    {{ end }}
-    </div>
-  </section>
-
-  <section class="mb-home-section">
-    <div class="mb-section-heading"><span>02 / TECHNICAL NOTES</span>{{ with site.GetPage "/notes" }}<a href="{{ .RelPermalink }}">READ ALL ↗</a>{{ end }}</div>
-    <div class="mb-note-stack">
-      {{ range first 4 (where site.RegularPages "Section" "notes") }}
-      <a href="{{ .RelPermalink }}"><span>{{ .Date.Format "2006.01.02" }}</span><strong>{{ .Title }}</strong><em>{{ with index .Params.tags 0 }}{{ . }}{{ end }}</em></a>
-      {{ end }}
-    </div>
-  </section>
-
-  <footer class="mb-home-footer">
-    <span>DESIGNED WITH HUGO / CONTOUR</span>
-    <span>DIGIO-LED VISUAL SYSTEM</span>
-    <a href="https://github.com/maevebaksa">GITHUB ↗</a>
-  </footer>
-</main>
 {{ end }}

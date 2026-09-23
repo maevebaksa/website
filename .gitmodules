@@ -1,3 +1,7 @@
 [submodule "themes/contour"]
 	path = themes/contour
 	url = https://github.com/mobiusone-org/hugo-contour.git
+
+[submodule "themes/bridget"]
+	path = themes/bridget
+	url = https://github.com/Sped0n/bridget.git

@@ -17,12 +17,13 @@
 {{ with or .Description site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 <meta name="theme-color" content="{{ site.Params.bg | default "#0B0B0A" }}">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
 {{ with or .Description site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{ with .Params.image }}<meta property="og:image" content="{{ . }}">{{ end }}
+{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
 {{ with or (.OutputFormats.Get "rss") (site.Home.OutputFormats.Get "rss") }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">{{ end }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

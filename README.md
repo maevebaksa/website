@@ -4,9 +4,11 @@ Hugo portfolio site for Maeve Baksa.
 
 ## Design
 
-- **Base theme:** [Contour](https://github.com/mobiusone-org/hugo-contour), pinned as a Git submodule.
-- **Visual direction:** Digio-forward — monochrome, editorial, terminal-like metadata, compact bordered modules — while retaining Contour's terrain canvas, navigation system, article layout, light/dark switching, and search-friendly Hugo architecture.
-- Other themes were treated only as secondary inspiration.
+- **Main theme:** [Contour](https://github.com/mobiusone-org/hugo-contour), pinned as a Git submodule.
+- **Homepage:** deliberately close to Contour's default landing page, with one portrait treatment added.
+- **Content pages:** mostly Contour, with restrained editorial details inspired by Digio.
+- **Photography:** a dedicated, simplified full-screen gallery derived from [Bridget](https://github.com/Sped0n/bridget). Bridget is pinned as a second submodule for provenance/reference; its heavier SolidJS application is not loaded on the engineering site.
+- **Favicon:** Lucide's open-source `cog` icon. See `THIRD_PARTY_LICENSES.md`.
 
 ## Local development
 
@@ -18,23 +20,21 @@ hugo server -D
 
 This site is tested with Hugo Extended 0.166.0 or newer.
 
-## GitHub Pages
+## Photography
 
-The repository includes `.github/workflows/pages.yml`. In GitHub:
+Add future photography files under `static/photography/`, then add entries to `data/photography.toml`:
 
-1. Open **Settings → Pages**.
-2. Under **Build and deployment**, select **GitHub Actions** as the source.
-3. Push to `main` or run **Deploy Hugo to GitHub Pages** manually.
+```toml
+[[photo]]
+src = "/photography/example.jpg"
+alt = "Description of the photograph"
+caption = "Optional caption"
+```
 
-The development URL is configured as:
+## Contact
 
-`https://maevebaksa.github.io/website/`
+Public email: `hi@maevebaksa.com`.
 
+## Images
 
-## Content migration
-
-The site structure, CV, project list, and technical notes were migrated from the WordPress site. WordPress remains the source of the current machine images during the first GitHub Pages stage; those files can be copied into this repository before the WordPress host is retired.
-
-## Pull requests
-
-Trusted PRs from `maevebaksa` and Dependabot are configured for **auto-merge after checks**. GitHub does not count a PR author's self-approval as a valid independent review, so this avoids pretending self-approval can satisfy a required-review rule.
+Project/profile imagery should live in `static/images/` and be referenced with site-local paths. Do not introduce new dependencies on the retired WordPress `wp-content` tree.

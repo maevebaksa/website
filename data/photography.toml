@@ -1,0 +1,7 @@
+# Photography data
+# Add photos as:
+#
+# [[photo]]
+# src = "/photography/example.jpg"
+# alt = "Description of the photograph"
+# caption = "Optional caption"

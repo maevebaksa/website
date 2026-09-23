@@ -1,0 +1,38 @@
+{{ define "main" }}
+<main class="mb-photo">
+  <header class="mb-photo-nav">
+    <a class="mb-photo-brand" href="{{ site.Home.RelPermalink }}">Maeve Baksa</a>
+    <span class="mb-photo-section">Photography</span>
+    <a href="{{ site.Home.RelPermalink }}">Back to site ↗</a>
+  </header>
+
+  {{ $photos := hugo.Data.photography.photo }}
+  {{ if $photos }}
+  <section class="mb-photo-stage" aria-label="Photography gallery">
+    {{ range $i, $photo := $photos }}
+    <figure class="mb-photo-slide" id="photo-{{ add $i 1 }}">
+      <img src="{{ $photo.src | relURL }}" alt="{{ $photo.alt }}" loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}">
+      <figcaption><span>{{ printf "%02d" (add $i 1) }} / {{ printf "%02d" (len $photos) }}</span>{{ with $photo.caption }}{{ . }}{{ end }}</figcaption>
+    </figure>
+    {{ end }}
+  </section>
+  <footer class="mb-photo-footer">
+    <span>Scroll / swipe to browse</span>
+    <span>{{ len $photos }} photographs</span>
+  </footer>
+  {{ else }}
+  <section class="mb-photo-empty">
+    <div>
+      <span class="mb-photo-index">ROLL 00 /</span>
+      <h1>Photography</h1>
+      <div class="mb-photo-copy">{{ .Content }}</div>
+      <p class="mb-photo-soon">Images incoming.</p>
+    </div>
+  </section>
+  <footer class="mb-photo-footer">
+    <span>Bridget-derived gallery</span>
+    <span>Collection pending</span>
+  </footer>
+  {{ end }}
+</main>
+{{ end }}

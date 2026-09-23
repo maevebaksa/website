@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body class="{{ if eq .Section "photography" }}layout-photography{{ else }}{{ partial "body-class.html" . }}{{ end }}">
+
+{{ if .IsHome }}
+{{ block "main" . }}{{ end }}
+{{ else if eq .Section "photography" }}
+{{ block "main" . }}{{ end }}
+{{ else }}
+{{ partial "sidebar.html" . }}
+{{ partial "site-controls.html" . }}
+{{ block "main" . }}{{ end }}
+{{ partial "copyright.html" . }}
+{{ end }}
+
+{{ partial "scripts.html" . }}
+</body>
+</html>
