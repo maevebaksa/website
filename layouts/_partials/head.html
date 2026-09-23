@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('contour-theme');
+    if (t !== 'light' && t !== 'dark') {
+      t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+<title>{{ if .IsHome }}{{ site.Title }} — Mechanical Engineer{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}</title>
+{{ with or .Description site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+{{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+<meta name="theme-color" content="{{ site.Params.bg | default "#0B0B0A" }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+{{ with or .Description site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Params.image }}<meta property="og:image" content="{{ . }}">{{ end }}
+{{ with or (.OutputFormats.Get "rss") (site.Home.OutputFormats.Get "rss") }}<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">{{ end }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet">
+{{- $variant := cond .IsHome "home" "page" -}}
+{{- $css := slice (resources.Get "css/base.css") (resources.Get "css/components.css") -}}
+{{- $css = $css | append (cond .IsHome (resources.Get "css/landing.css") (resources.Get "css/post.css")) -}}
+{{- $bundle := $css | resources.Concat (printf "css/contour-%s.css" $variant) -}}
+{{- if hugo.IsProduction }}{{ $bundle = $bundle | minify | fingerprint }}{{ end -}}
+<link rel="stylesheet" href="{{ $bundle.RelPermalink }}"{{ with $bundle.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end }}>
+{{- if or site.Params.fg site.Params.bg }}
+<style>:root{
+{{- with site.Params.fg }}--fg-src:{{ . }};--fg-src-rgb:{{ partial "hex2rgb.html" . }};{{ end }}
+{{- with site.Params.bg }}--bg-src:{{ . }};--bg-src-rgb:{{ partial "hex2rgb.html" . }};{{ end }}
+}</style>
+{{- end }}
+{{- $custom := resources.Get "css/maeve.css" -}}
+{{- if hugo.IsProduction }}{{ $custom = $custom | minify | fingerprint }}{{ end -}}
+<link rel="stylesheet" href="{{ $custom.RelPermalink }}"{{ with $custom.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end }}>

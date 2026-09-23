@@ -1,0 +1,14 @@
+<div class="mb-portfolio-intro">
+<p class="mb-page-lede">Machines and technical systems I’ve built, modified, or used as development platforms.</p>
+</div>
+<div class="mb-portfolio-grid">
+{{ range site.Data.projects.project }}
+  {{ $p := site.GetPage (printf "/projects/%s" .slug) }}
+  <a class="mb-portfolio-item" href="{{ $p.RelPermalink }}">
+    <div class="visual">{{ if .image }}<img src="{{ .image }}" alt="{{ .alt }}">{{ else }}<span class="empty">[ + ]</span>{{ end }}</div>
+    <div class="labels"><span>{{ .type }}</span><span>{{ .year }}</span></div>
+    <h3>{{ .title }}</h3>
+    <p>{{ .description }}</p>
+  </a>
+{{ end }}
+</div>
