@@ -4,8 +4,6 @@ description: "Mechanical engineer working across machine design, materials, addi
 ---
 <p class="mb-page-lede">I build and modify machines where mechanics, materials, and software all matter at the same time.</p>
 
-<p class="mb-aside-note"><span>SMALL BIAS /</span> I have a soft spot for machines that are a little unusual, as long as they can still be measured, understood, and repaired.</p>
-
 <div class="mb-specs">
   <div><span>EDUCATION / 01</span><strong>B.S. Mechanical Engineering<br>Union College · 2026</strong></div>
   <div><span>EDUCATION / 02</span><strong>M.S. Mechanical Engineering<br>Tufts University · ongoing</strong></div>

@@ -5,7 +5,7 @@
 {{ range hugo.Data.projects.project }}
   {{ $p := site.GetPage (printf "/projects/%s" .slug) }}
   <a class="mb-portfolio-item" href="{{ $p.RelPermalink }}">
-    <div class="visual">{{ if .image }}<img src="{{ .image }}" alt="{{ .alt }}">{{ else }}<span class="empty">[ + ]</span>{{ end }}</div>
+    <div class="visual">{{ if .image }}<img src="{{ .image | relURL }}" alt="{{ .alt }}">{{ else }}<span class="empty">[ + ]</span>{{ end }}</div>
     <div class="labels"><span>{{ .type }}</span><span>{{ .year }}</span></div>
     <h3>{{ .title }}</h3>
     <p>{{ .description }}</p>

@@ -1,11 +1,11 @@
 ---
 title: "Voron 2.4 Toolchanger"
 description: "Four-tool Voron platform integrating tool identity, sensing, mapping, failover, and distributed toolhead electronics."
-image: "https://www.maevebaksa.com/wp-content/uploads/2026/09/voron-24-toolchanger.webp"
+image: "images/voron-24-toolchanger.webp"
 tags: ["portfolio"]
 ---
 <div class="mb-project-hero">
-  <div class="image"><img src="https://www.maevebaksa.com/wp-content/uploads/2026/09/voron-24-toolchanger.webp" alt="Black-and-red Voron 2.4 with four docked toolheads"></div>
+  <div class="image"><img src="../../images/voron-24-toolchanger.webp" alt="Black-and-red Voron 2.4 with four docked toolheads"></div>
   <div class="mb-project-facts">
     <div><span>TYPE</span><strong>COREXY / SYSTEMS</strong></div>
     <div><span>PERIOD</span><strong>2026</strong></div>

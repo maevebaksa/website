@@ -1,11 +1,11 @@
 ---
 title: "Custom Belt Printer"
 description: "A compact custom belt-printer prototype exploring packaging, continuous Z, and nonstandard motion."
-image: "https://www.maevebaksa.com/wp-content/uploads/2026/09/custom-belt-printer.webp"
+image: "images/custom-belt-printer.webp"
 tags: ["portfolio"]
 ---
 <div class="mb-project-hero">
-  <div class="image"><img src="https://www.maevebaksa.com/wp-content/uploads/2026/09/custom-belt-printer.webp" alt="Compact custom black-and-yellow belt 3D printer"></div>
+  <div class="image"><img src="../../images/custom-belt-printer.webp" alt="Compact custom black-and-yellow belt 3D printer"></div>
   <div class="mb-project-facts">
     <div><span>TYPE</span><strong>BELT / PROTOTYPE</strong></div>
     <div><span>PERIOD</span><strong>2026</strong></div>

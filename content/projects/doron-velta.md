@@ -1,11 +1,11 @@
 ---
 title: "Doron Velta"
 description: "A compact delta platform used as part of a broader mixed-kinematics printer fleet."
-image: "https://www.maevebaksa.com/wp-content/uploads/2026/09/doron-velta.webp"
+image: "images/doron-velta.webp"
 tags: ["portfolio"]
 ---
 <div class="mb-project-hero">
-  <div class="image"><img src="https://www.maevebaksa.com/wp-content/uploads/2026/09/doron-velta.webp" alt="Black-and-pink Doron Velta delta 3D printer"></div>
+  <div class="image"><img src="../../images/doron-velta.webp" alt="Black-and-pink Doron Velta delta 3D printer"></div>
   <div class="mb-project-facts">
     <div><span>TYPE</span><strong>DELTA / MACHINE</strong></div>
     <div><span>PERIOD</span><strong>2026</strong></div>

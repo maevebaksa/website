@@ -1,11 +1,11 @@
 ---
 title: "Voron Switchwire / Enderwire"
 description: "A compact CoreXZ development machine used for Klipper, interface, camera, and motion-control work."
-image: "https://www.maevebaksa.com/wp-content/uploads/2026/09/switchwire-enderwire.webp"
+image: "images/switchwire-enderwire.webp"
 tags: ["portfolio"]
 ---
 <div class="mb-project-hero">
-  <div class="image"><img src="https://www.maevebaksa.com/wp-content/uploads/2026/09/switchwire-enderwire.webp" alt="Enclosed black-and-green Voron Switchwire / Enderwire 3D printer"></div>
+  <div class="image"><img src="../../images/switchwire-enderwire.webp" alt="Enclosed black-and-green Voron Switchwire / Enderwire 3D printer"></div>
   <div class="mb-project-facts">
     <div><span>TYPE</span><strong>COREXZ / PLATFORM</strong></div>
     <div><span>PERIOD</span><strong>2026</strong></div>
