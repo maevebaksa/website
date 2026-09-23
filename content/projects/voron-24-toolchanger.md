@@ -4,7 +4,7 @@ weight: 1
 description: "A Voron 2.4 extensively modified into a modular multi-tool research and development platform."
 type: "COREXY / TOOLCHANGER"
 year: "2025—2026"
-image: "images/voron-24-toolchanger.jpg"
+image: "images/voron-24-toolchanger.png"
 alt: "Modified Voron 2.4 with multiple docked toolheads"
 domain: "Mechanical systems / additive manufacturing"
 status: "Active research platform"
