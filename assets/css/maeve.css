@@ -492,7 +492,7 @@ a { -webkit-tap-highlight-color: transparent; }
 
 /* Very wide desktop only. The image is fixed-size and anchored to the right edge,
    completely independent of the navigation geometry. */
-@media (min-width: 1540px) and (min-height: 700px) {
+@media (min-width: 1800px) and (min-height: 700px) {
   .mb-home-discipline {
     display: block;
   }
@@ -513,7 +513,7 @@ a { -webkit-tap-highlight-color: transparent; }
 }
 
 /* Tablet / laptop / phone: preserve stock Contour navigation. */
-@media (max-width: 1539px) {
+@media (max-width: 1799px) {
   .mb-home-portrait,
   .mb-home-discipline {
     display: none !important;
@@ -627,4 +627,11 @@ a { -webkit-tap-highlight-color: transparent; }
     padding-block: 2px;
     font-size: clamp(20px, 5.5vh, 32px);
   }
+}
+
+
+/* Portrait is only revealed after a real collision check against the menu. */
+@media (min-width: 1800px) and (min-height: 700px) {
+  .mb-home-portrait { visibility: hidden; }
+  .mb-home-portrait.is-safe { visibility: visible; }
 }
