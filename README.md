@@ -30,14 +30,6 @@ The development URL is configured as:
 
 `https://maevebaksa.github.io/website/`
 
-## Moving to maevebaksa.com later
-
-When ready to switch the domain:
-
-1. Change `baseURL` in `hugo.toml` to `https://www.maevebaksa.com/`.
-2. Add the custom domain in **Settings → Pages**.
-3. Add the required DNS records at the DNS provider.
-4. Add a `static/CNAME` file containing the final hostname after the DNS target is decided.
 
 ## Content migration
 
